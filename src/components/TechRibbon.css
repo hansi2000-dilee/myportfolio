@@ -1,0 +1,144 @@
+.tech-ribbon-wrapper {
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.tech-ribbon-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(to right, #fff, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tech-ribbon-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #fbbf24; /* Yellow Accent */
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+/* ... wrapper styles stay ... */
+
+.tech-ribbon-container {
+  width: 100%;
+  height: 140px;
+  background: rgba(20, 10, 30, 0.6); 
+  backdrop-filter: blur(10px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* 3D Look */
+  transform: perspective(1000px) rotateX(10deg);
+  transform-style: preserve-3d;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  margin-top: -20px; /* Pull up slightly to account for rotation */
+}
+
+/* Bright yellow/white accents for the track area if desired, or keep track transparent */
+.tech-ribbon-track {
+  display: flex;
+  gap: 4rem;
+  width: max-content;
+  animation: scroll 80s linear infinite; /* Very Slow scroll */
+  padding: 0 2rem;
+}
+
+.tech-ribbon-item {
+  display: flex;
+  flex-direction: row; /* Side by side */
+  align-items: center;
+  justify-content: center;
+  gap: 0; /* No gap needed if name hidden */
+  min-width: max-content; /* Ensure it fits */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+  /* Remove pill background/border since just icons */
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* ... */
+
+.tech-icon-wrapper {
+  width: 110px; /* Increased size */
+  height: 110px;
+  background: rgba(255, 255, 255, 0.08); 
+  border-radius: 12px; /* Not round anymore */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Bright Yellow Border */
+  border: 2px solid #fbbf24;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.4); 
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ... */
+
+.tech-icon {
+  width: 80px; /* Increased icon size */
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Shadow for depth */
+  z-index: 1;
+}
+
+.tech-name {
+  display: none; /* Hidden */
+}
+
+/* Keyframes scroll ... */
+/* Gradient masks ... */
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Scroll half way (since we triplicated content, ensuring seamless loop) */
+}
+
+/* Add gradient masks for fade effect at edges */
+.tech-ribbon-container::before,
+.tech-ribbon-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tech-ribbon-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.tech-ribbon-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-primary), transparent);
+}

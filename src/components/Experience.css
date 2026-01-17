@@ -1,0 +1,130 @@
+/* Professional Journey Section */
+.timeline {
+  position: relative;
+  max-width: 1200px; /* Wider container */
+  margin: 0 auto;
+  padding: 4rem 0;
+  perspective: 1000px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px; /* Keep strict line on left for consistency */
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, #ec4899, #fbbf24, #fff); /* Pink + Yellow + White */
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 4rem;
+  padding-left: 80px; /* Space for line */
+  width: 100%;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 20px; /* Center on line */
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: #0f0715;
+  border: 3px solid #fbbf24; /* Yellow Border */
+  border-radius: 50%;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+.timeline-item:hover .timeline-dot {
+  background: #ec4899; /* Pink fill on hover */
+  border-color: #fff;
+  transform: scale(1.3);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px; /* More rounded */
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  backdrop-filter: blur(15px);
+  /* 3D Look */
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Gradient Top Border */
+.timeline-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #ec4899, #fbbf24, #fff);
+}
+
+.timeline-item:hover .timeline-content {
+  transform: rotateX(5deg) translateY(-10px) scale(1.01);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.5),
+    0 0 30px rgba(236, 72, 153, 0.15); /* Pink glow */
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.timeline-date {
+  color: #fbbf24; /* Yellow */
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timeline-role {
+  font-size: 1.8rem; /* Big Title */
+  font-weight: 800;
+  background: linear-gradient(to right, #fff, #ec4899); /* White to Pink */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-company {
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  border-left: 3px solid #fbbf24;
+  padding-left: 10px;
+}
+
+.timeline-content p {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+  .timeline-item {
+    padding-left: 60px;
+  }
+  .timeline-dot {
+    left: 10px;
+  }
+}

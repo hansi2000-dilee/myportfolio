@@ -1,0 +1,91 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+  gap: 2.5rem;
+  margin-top: 3rem;
+  perspective: 1000px; /* Enable 3D space */
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
+.skill-category {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  /* 3D Properties */
+  transform-style: preserve-3d;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* ... existing ... */
+
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #fff, #a855f7, #fbbf24); /* White + Purple + Yellow */
+  opacity: 0.8;
+}
+
+.skill-category:hover {
+  transform: translateY(-10px) scale(1.02) rotateX(5deg);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.5); /* Purple Border */
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(168, 85, 247, 0.2), /* Purple Shadow */
+    inset 0 0 20px rgba(251, 191, 36, 0.05); /* Yellow Inset */
+}
+
+.skill-category h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 1rem;
+}
+/* Add yellow accent to icons if possible or just text */
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tag {
+  background: rgba(255, 255, 255, 0.03);
+  color: #e5e7eb;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.skill-tag:hover {
+  background: #a855f7; /* Purple Background */
+  color: #fff;
+  border-color: #fbbf24; /* Yellow Border */
+  transform: translateZ(20px) scale(1.1); /* Pop out in 3D */
+  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4), 0 0 5px #fbbf24;
+}
