@@ -4,9 +4,11 @@ const path = require('path');
 require('dotenv').config();
 
 const dbConfig = {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
+    host: process.env.DB_HOST,       // remote host from Hostinger
+    user: process.env.DB_USER,       // your DB user
     password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,   // add this
+    port: process.env.DB_PORT || 3306,
     multipleStatements: true
 };
 
