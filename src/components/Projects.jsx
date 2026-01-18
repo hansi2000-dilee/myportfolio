@@ -133,7 +133,7 @@ const ProjectCard = ({ project, index }) => {
                                     onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(idx); }}
                                     style={{
                                         display: 'block', width: '8px', height: '8px', borderRadius: '50%',
-                                        backgroundColor: idx === currentImageIndex ? '#fbbf24' : 'rgba(255,255,255,0.4)',
+                                        backgroundColor: idx === currentImageIndex ? '#FCE60D' : 'rgba(255,255,255,0.4)',
                                         cursor: 'pointer', transition: 'all 0.3s'
                                     }} 
                                 />
@@ -144,12 +144,12 @@ const ProjectCard = ({ project, index }) => {
             </>
         ) : (
             <div style={{width:'100%', height:'100%', display:'flex', alignItems:'center', justifyContent:'center'}}>
-                <Layers size={40} color="#9333ea" />
+                <Layers size={40} color="#5709B0" />
             </div>
         )}
       </div>
 
-      <div className="project-content" style={{ background: '#1c1c1c', padding: '1.5rem', position: 'relative' }}>
+      <div className="project-content" style={{ background: 'linear-gradient(145deg, #111, #080808)', padding: '1.5rem', position: 'relative' }}>
         <h3 className="project-title" style={{ color: '#fff', fontSize: '1.25rem', marginBottom: '0.5rem' }}>{project.title}</h3>
         
         {/* Used Skills */}
@@ -158,11 +158,11 @@ const ProjectCard = ({ project, index }) => {
                {project.technologies && project.technologies.split(',').map((t, i) => (
                  <span key={i} className="tech-tag" style={{
                     fontSize: '0.7rem', 
-                    color: '#9333ea', 
-                    background: 'rgba(147, 51, 234, 0.1)', 
+                    color: '#FCE60D', 
+                    background: 'rgba(87, 9, 176, 0.2)', 
                     padding: '4px 8px', 
                     borderRadius: '4px',
-                    border: '1px solid rgba(147, 51, 234, 0.2)'
+                    border: '1px solid rgba(87, 9, 176, 0.4)'
                  }}>{t.trim()}</span>
                ))}
              </div>
@@ -178,14 +178,14 @@ const ProjectCard = ({ project, index }) => {
                 flex: 1,
                 textAlign: 'center',
                 padding: '10px 0',
-                background: 'linear-gradient(135deg, #9333ea 0%, #7e22ce 100%)',
+                background: 'linear-gradient(135deg, #5709B0 0%, #3e067c 100%)',
                 color: 'white',
                 fontWeight: '600',
                 borderRadius: '8px',
                 textDecoration: 'none',
                 boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
                 transition: 'transform 0.2s',
-                border: 'none',
+                border: '1px solid rgba(255,255,255,0.1)',
                 fontSize: '0.9rem'
             }}>
                Live Demo
@@ -196,9 +196,9 @@ const ProjectCard = ({ project, index }) => {
                 flex: 1,
                 textAlign: 'center',
                 padding: '10px 0',
-                background: '#fbbf24',
-                color: '#111',
-                fontWeight: '600',
+                background: '#FCE60D',
+                color: '#000',
+                fontWeight: '700',
                 borderRadius: '8px',
                 textDecoration: 'none',
                 boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
@@ -245,7 +245,7 @@ const Projects = () => {
       >
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span style={{ 
-                color: '#fbbf24', 
+                color: '#FCE60D', 
                 fontSize: '0.9rem', 
                 fontWeight: '600', 
                 letterSpacing: '2px', 

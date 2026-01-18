@@ -1,15 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap");
 
 :root {
-  --bg-primary: #050505;
-  --bg-secondary: #0f0715;
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --accent-primary: #9333ea; /* Purple 600 */
-  --accent-secondary: #d8b4fe; /* Purple 300 */
-  --accent-glow: rgba(147, 51, 234, 0.5);
+  /* Requested Theme Palette */
+  --accent-primary: #5709B0; /* Deep Purple */
+  --accent-secondary: #FCE60D; /* Bright Yellow/Gold */
+  --text-primary: #FFFFFF; /* Pure White */
+  --text-secondary: #e5e5e5; /* Soft White */
+  
+  /* Backgrounds - Darkened versions of primary or neutral black to make colors pop */
+  --bg-primary: #020005; /* Black with tiny hint of purple */
+  --bg-secondary: #0d011a; /* Very dark purple */
+  
+  /* Effects */
+  --accent-glow: rgba(87, 9, 176, 0.6);
+  --accent-glow-yellow: rgba(252, 230, 13, 0.5);
   --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(252, 230, 13, 0.1); /* Subtle yellow border tint */
 }
 
 * {
@@ -52,26 +58,29 @@ a {
   padding: 100px 0;
 }
 
+/* Gradient Heading: Purple to Yellow */
 .heading-gradient {
-  background: linear-gradient(135deg, #fff 0%, var(--accent-secondary) 100%);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(87, 9, 176, 0.3));
 }
 
 .card {
-  background: var(--glass-bg);
+  background: linear-gradient(145deg, rgba(87, 9, 176, 0.05) 0%, rgba(0,0,0,0.4) 100%);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 2rem;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
   transform: translateY(-5px);
-  border-color: var(--accent-primary);
-  box-shadow: 0 10px 30px -10px var(--accent-glow);
+  border-color: var(--accent-secondary);
+  box-shadow: 0 10px 30px -5px var(--accent-glow);
 }
 
 .btn {
@@ -81,42 +90,45 @@ a {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Primary Button: Purple with Yellow Glow */
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, #7e22ce 100%);
+  background: var(--accent-primary);
   color: white;
-  border: none;
-  box-shadow: 0 4px 15px var(--accent-glow);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 15px rgba(87, 9, 176, 0.4);
 }
 
 .btn-primary:hover {
+  background: #45068d;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px var(--accent-glow);
-}
-
-.btn-outline {
-  background: transparent;
-  border: 1px solid var(--accent-primary);
+  box-shadow: 0 0 25px var(--accent-secondary); /* Yellow glow on hover */
+  border-color: var(--accent-secondary);
   color: var(--accent-secondary);
 }
 
+/* Outline Button: Yellow Border */
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+  font-weight: 700;
+}
+
 .btn-outline:hover {
-  background: rgba(147, 51, 234, 0.1);
-  color: white;
+  background: var(--accent-secondary);
+  color: #000; /* Black text on yellow background for readability */
+  box-shadow: 0 0 20px rgba(252, 230, 13, 0.4);
 }
 
 /* Animations */
 @keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
 }
 
 .animate-float {
@@ -134,8 +146,9 @@ a {
 ::-webkit-scrollbar-thumb {
   background: var(--accent-primary);
   border-radius: 5px;
+  border: 2px solid var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7e22ce;
+  background: var(--accent-secondary);
 }

@@ -70,7 +70,7 @@ const Navbar = () => {
                   style={{ 
                     padding: '8px 20px', 
                     fontSize: '0.9rem',
-                    background: 'linear-gradient(90deg, #9333ea 0%, #eab308 100%)', // Purple to Yellow
+                    background: 'linear-gradient(90deg, #5709B0 0%, #FCE60D 100%)', // Purple to Yellow
                     color: 'white',
                     border: 'none',
                     fontWeight: '600',
@@ -110,7 +110,7 @@ const Navbar = () => {
               marginTop: '1rem',
               padding: '10px 30px', 
               fontSize: '1rem',
-              background: 'linear-gradient(90deg, #9333ea 0%, #eab308 100%)',
+              background: 'linear-gradient(90deg, #5709B0 0%, #FCE60D 100%)',
               color: 'white',
               border: 'none',
               fontWeight: '600'

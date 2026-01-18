@@ -37,8 +37,8 @@ const Contact = () => {
   return (
     <section id="contact" className="section container" style={{ position: 'relative' }}>
       {/* Decorative Elements */}
-      <div style={{ position: 'absolute', top: '10%', right: '5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(147,51,234,0.2) 0%, rgba(0,0,0,0) 70%)', filter: 'blur(40px)', zIndex: 0 }}></div>
-      <div style={{ position: 'absolute', bottom: '10%', left: '5%', width: '250px', height: '250px', background: 'radial-gradient(circle, rgba(251,191,36,0.15) 0%, rgba(0,0,0,0) 70%)', filter: 'blur(40px)', zIndex: 0 }}></div>
+      <div style={{ position: 'absolute', top: '10%', right: '5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(87, 9, 176, 0.2) 0%, rgba(0,0,0,0) 70%)', filter: 'blur(40px)', zIndex: 0 }}></div>
+      <div style={{ position: 'absolute', bottom: '10%', left: '5%', width: '250px', height: '250px', background: 'radial-gradient(circle, rgba(252, 230, 13, 0.15) 0%, rgba(0,0,0,0) 70%)', filter: 'blur(40px)', zIndex: 0 }}></div>
 
       <motion.div 
         className="contact-wrapper"
@@ -48,28 +48,28 @@ const Contact = () => {
         style={{ background: 'rgba(20, 20, 30, 0.6)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.05)', boxShadow: '0 20px 50px rgba(0,0,0,0.3)', zIndex: 1, position: 'relative' }}
       >
         <div className="contact-info">
-          <h2 className="heading-gradient" style={{ fontSize: '2.5rem', marginBottom: '1.5rem', background: 'linear-gradient(to right, #fff, #fbbf24)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Get In Touch</h2>
+          <h2 className="heading-gradient" style={{ fontSize: '2.5rem', marginBottom: '1.5rem', background: 'linear-gradient(to right, #fff, #FCE60D)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Get In Touch</h2>
           <p style={{ color: '#aaa', marginBottom: '2rem', lineHeight: '1.6' }}>
             I'm currently available for freelance work or full-time opportunities. Feel free to reach out to me via email, WhatsApp, or the form below.
           </p>
 
           <div className="contact-details">
             <div className="contact-item">
-              <div className="icon-box" style={{ background: 'rgba(147, 51, 234, 0.2)', color: '#d8b4fe' }}><Mail size={20} /></div>
+              <div className="icon-box" style={{ background: 'rgba(87, 9, 176, 0.2)', color: '#fff' }}><Mail size={20} /></div>
               <span style={{ color: '#fff' }}>{details?.email || 'email@example.com'}</span>
             </div>
             <div className="contact-item">
-              <div className="icon-box" style={{ background: 'rgba(251, 191, 36, 0.2)', color: '#fde047' }}><Phone size={20} /></div>
+              <div className="icon-box" style={{ background: 'rgba(252, 230, 13, 0.2)', color: '#FCE60D' }}><Phone size={20} /></div>
               <span style={{ color: '#fff' }}>{details?.phone || '+94 00 000 0000'}</span>
             </div>
             <div className="contact-item">
-              <div className="icon-box" style={{ background: 'rgba(236, 72, 153, 0.2)', color: '#f9a8d4' }}><MapPin size={20} /></div>
+              <div className="icon-box" style={{ background: 'rgba(255,255,255, 0.1)', color: '#fff' }}><MapPin size={20} /></div>
               <span style={{ color: '#fff' }}>{details?.address || 'City, Country'}</span>
             </div>
           </div>
 
           <div style={{ marginTop: '2rem' }}>
-              <h4 style={{ color: '#fbbf24', marginBottom: '1rem', fontSize: '1.1rem' }}>Connect via WhatsApp</h4>
+              <h4 style={{ color: '#FCE60D', marginBottom: '1rem', fontSize: '1.1rem' }}>Connect via WhatsApp</h4>
               <a 
                 href="https://wa.me/94775650717" 
                 target="_blank" 
@@ -109,22 +109,22 @@ const Contact = () => {
         <form className="contact-form" onSubmit={handleSubmit} style={{ background: 'rgba(0,0,0,0.2)', padding: '2rem', borderRadius: '16px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
              <div className="form-group">
-                <label style={{ color: '#d8b4fe' }}>Name</label>
+                <label style={{ color: '#fff' }}>Name</label>
                 <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required />
              </div>
              <div className="form-group">
-                <label style={{ color: '#fde047' }}>Job Title / Role</label>
+                <label style={{ color: '#FCE60D' }}>Job Title / Role</label>
                 <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="e.g. HR Manager" required />
              </div>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div className="form-group">
-                <label style={{ color: '#f9a8d4' }}>Email</label>
+                <label style={{ color: '#fff' }}>Email</label>
                 <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" required />
               </div>
               <div className="form-group">
-                <label style={{ color: '#d8b4fe' }}>Phone Number</label>
+                <label style={{ color: '#fff' }}>Phone Number</label>
                 <input type="text" name="phone" value={formData.phone} onChange={handleChange} placeholder="+94 77 ..." required />
               </div>
           </div>
@@ -135,7 +135,7 @@ const Contact = () => {
           </div>
 
           <div className="form-group">
-            <label style={{ color: '#fbbf24' }}>Message</label>
+            <label style={{ color: '#FCE60D' }}>Message</label>
             <textarea name="message" value={formData.message} onChange={handleChange} placeholder="How can I help you?" rows="4" required></textarea>
           </div>
 
@@ -144,7 +144,7 @@ const Contact = () => {
               padding: '12px', 
               fontSize: '1rem', 
               fontWeight: 'bold', 
-              background: 'linear-gradient(90deg, #9333ea 0%, #ec4899 50%, #fbbf24 100%)', 
+              background: 'linear-gradient(90deg, #5709B0 0%, #FCE60D 100%)', 
               color: 'white', 
               border: 'none', 
               borderRadius: '8px',
